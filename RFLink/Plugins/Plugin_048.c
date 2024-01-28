@@ -656,7 +656,7 @@ boolean Plugin_048(byte function, const char *string) {
 		if (checksum(1, 8, osdata[8]) != 0) return false; // checksum = all nibbles 0-15 results is nibbles 16.17			 
 
 		temp = oregon_getTemperature();
-		hum = ((osdata[7] & 0x0F) * 16) + (osdata[6] >> 4);
+		hum = ((osdata[7] & 0x0F) * 10) + (osdata[6] >> 4);
 
 		display_Header();
 		display_NameEx(PSTR("Oregon"), id);
